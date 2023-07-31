@@ -1,0 +1,25 @@
+Coding Challenge
+ Consider you are having an array of strings ["a","b","c","a","b","c","a","e"] in
+which the strings will have duplicate values. You have to find each string's duplicate count. 
+1. If the count of a particular string is odd, then print that string and its count
+2. If the count of a string is even, dont print
+Note : The string can be anything and the array length can
+
+
+
+
+
+const myArray = ["a","b","c","a","b","c","a","e"];
+
+let uniqueElements = [...new Set(myArray)];
+
+const elementCounts = uniqueElements.map(value => [value, myArray.filter(str => str === value).length]);
+
+console.log(elementCounts);
+
+if (elementCounts % 2 != 0){
+    console.log("The Odd Values is :",elementCounts[0],elementCounts[3])
+}
+else{
+    console.log("")
+} 
